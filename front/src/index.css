@@ -1,11 +1,9 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  font-size: 14px;
+  color: #FFFFFF;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,25 +13,13 @@
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
+  color: inherit;
   text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
@@ -55,15 +41,73 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.header {
+  background-color: #2196F3;
+  padding: 0 62px;
+}
+.nav_list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+.nav_link {
+  display: block;
+  padding: 25px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+.nav_link-active {
+  background-color: #1E88E5;
+  opacity: 1;
+}
+.nav_link:hover {
+  opacity: 1;
+}
+.container {
+  padding: 50px 62px;
+}
+.cats_list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 225px);
+  gap: 50px;
+}
+.cat_item {
+  width: 225px;
+  height: 225px;
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.cat_item:hover {
+  transform: scale(1.2);
+}
+.cat_image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.like_button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: none;
+  background-image: url('like.svg');
+  width: 48px;
+  height: 48px;
+}
+.cat_item:hover .like_button {
+  display: block;
+}
+.cat_item:hover .like_button:hover {
+  background-image: url('like-hover.svg');
+}
+.cat_item:hover .like_button-active, 
+.cat_item:hover .like_button-active:hover {
+  background-image: url('like-active.svg');
 }
