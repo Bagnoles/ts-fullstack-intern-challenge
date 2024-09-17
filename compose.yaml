@@ -45,9 +45,9 @@ services:
     networks:
       - cat-pinterest-net
     environment:
-      POSTGRES_PASSWORD: 1
+      POSTGRES_PASSWORD: test
       POSTGRES_USER: postgres
-      POSTGRES_DB: support_lk_db
+      POSTGRES_DB: cats_db
     #      PG_DATA: /var/lib/postgresql/data
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U postgres" ]

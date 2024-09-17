@@ -16,12 +16,10 @@ const StatusCodeMapping: Record<number, boolean> = {
 
 const shouldDisplayError = (response: AxiosResponse) => StatusCodeMapping[response.status];
 
-const BASE_URL = 'https://api.thecatapi.com/v1';
 const TIMEOUT = 5000;
 
 export const createAPI = (): AxiosInstance => {
   const api = axios.create({
-    baseURL: BASE_URL,
     timeout: TIMEOUT
   });
 
@@ -30,7 +28,7 @@ export const createAPI = (): AxiosInstance => {
       const token = getToken();
 
       if (token && config.headers) {
-        config.headers['authorization'] = `Bearer ${token}`;
+        config.headers['X-Auth-Token'] = token;
       }
 
       return config;

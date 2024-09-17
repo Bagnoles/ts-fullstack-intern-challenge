@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { AppRoutes } from "../../const";
 
 type HeaderProps = {
-  active: 'favorite' | 'main';
+  active?: 'favorite' | 'main';
 }
 
 function Header({active}: HeaderProps) {

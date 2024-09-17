@@ -3,7 +3,6 @@
   line-height: 1.5;
   font-weight: 400;
   font-size: 14px;
-  color: #FFFFFF;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -44,6 +43,7 @@ button:focus-visible {
 .header {
   background-color: #2196F3;
   padding: 0 62px;
+  color: #FFFFFF;
 }
 .nav_list {
   margin: 0;
@@ -97,7 +97,7 @@ button:focus-visible {
   bottom: 15px;
   right: 15px;
   display: none;
-  background-image: url('like.svg');
+  background-image: url('./assets/like.svg');
   width: 48px;
   height: 48px;
 }
@@ -105,9 +105,9 @@ button:focus-visible {
   display: block;
 }
 .cat_item:hover .like_button:hover {
-  background-image: url('like-hover.svg');
+  background-image: url('./assets/like-hover.svg');
 }
 .cat_item:hover .like_button-active, 
 .cat_item:hover .like_button-active:hover {
-  background-image: url('like-active.svg');
+  background-image: url('./assets/like-active.svg');
 }
