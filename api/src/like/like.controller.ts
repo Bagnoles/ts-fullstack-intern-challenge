@@ -16,8 +16,8 @@ export class LikeController {
     return this.likeService.createLike(body);
   }
 
-  @Delete('/:cat_id')
-  deleteLike(@Param('cat_id') id: string) {
-    return this.deleteLike(id);
+  @Delete(':id')
+  deleteLike(@Param('id') id: string) {
+    return this.likeService.deleteLike(id);
   }
 }

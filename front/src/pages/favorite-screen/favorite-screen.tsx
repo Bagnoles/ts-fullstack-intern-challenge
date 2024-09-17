@@ -12,8 +12,8 @@ function FavoriteScreen() {
   const isLoading = useAppSelector(getLikesLoadingStatus);
   const favoriteCats = useAppSelector(getFavoriteCats);
 
-  if (likes.length) {
-    likes.forEach((like) => dispatch(fetchCat(like.cat_id)));
+  if (likes.length > 0) {
+    likes.slice().forEach((like) => dispatch(fetchCat(like.cat_id)));
   }
 
   if (isServerError) {
@@ -24,7 +24,7 @@ function FavoriteScreen() {
     <>
       <Header active="favorite" />
       <div className='container'>
-        { isLoading ? 'Идет загрузка...' : <CatList data={favoriteCats} /> }
+        { isLoading ? 'Идет загрузка...' : favoriteCats.length === 0 ? 'Вы пока не выбрали любимых котиков...' : <CatList data={favoriteCats} /> }
       </div>
     </>
   )

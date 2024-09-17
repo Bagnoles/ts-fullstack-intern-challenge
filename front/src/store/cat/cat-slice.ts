@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { NameSpace } from '../../const';
-import { fetchCats, fetchCat } from '../api-actions';
+import { fetchCats, fetchCat, deleteLike } from '../api-actions';
 import { Cat } from '../../types/cat.type';
 
 type CatInitialStateType = {
@@ -40,7 +40,12 @@ export const catSlice = createSlice({
                 state.cats.isError = true;
             })
             .addCase(fetchCat.fulfilled, (state, action) => {
-                state.favoriteCats.push(action.payload);
+                if (state.favoriteCats.filter((cat) => cat.id === action.payload.id).length === 0) {
+                    state.favoriteCats.push(action.payload);
+                }
+            })
+            .addCase(deleteLike.fulfilled, (state, action) => {
+                state.favoriteCats = state.favoriteCats.filter((item) => item.id !== action.payload);
             })
     },
 });

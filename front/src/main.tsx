@@ -7,9 +7,10 @@ import { ToastContainer } from 'react-toastify';
 import App from './components/app/app'
 import './index.css'
 import { store } from './store';
-import { fetchCats } from './store/api-actions';
+import { fetchCats, fetchLikes } from './store/api-actions';
 
 store.dispatch(fetchCats());
+store.dispatch(fetchLikes());
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

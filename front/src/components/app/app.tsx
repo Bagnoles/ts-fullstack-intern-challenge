@@ -9,7 +9,7 @@ function App() {
     return (
       <Routes>
         <Route path={AppRoutes.Main} element={<MainScreen />} />
-        <Route path={AppRoutes.Main} element={<FavoriteScreen />} />
+        <Route path={AppRoutes.Favorite} element={<FavoriteScreen />} />
         <Route path='*' element={<NotFoundScreen />} />
       </Routes>
     )

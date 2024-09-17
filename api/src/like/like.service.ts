@@ -25,6 +25,6 @@ export class LikeService {
     if (!like) {
       throw new NotFoundException(`Like with cat ID ${cat_id} not found`);
     }
-    await this.likeRepository.delete(cat_id);
+    await this.likeRepository.delete({ cat_id });
   }
 }
